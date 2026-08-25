@@ -1,0 +1,43 @@
+&share
+ wrf_core = 'ARW',
+ max_dom = 3,
+ start_date = '2020-05-15_00:00:00','2020-05-15_00:00:00','2020-05-15_00:00:00',
+ end_date   = '2020-05-16_00:00:00','2020-05-16_00:00:00','2020-05-16_00:00:00',
+ interval_seconds = 3600,
+ io_form_geogrid = 2,
+/
+
+&geogrid
+ parent_id         = 1,1,2,
+ parent_grid_ratio = 1,5,3,
+ i_parent_start    = 1,118,247,
+ j_parent_start    = 1,90,138,
+ e_we          = 361,541,433,
+ e_sn          = 261,391,391,
+ geog_data_res = '30s','30s','30s',
+ dx = 7500,
+ dy = 7500,
+ map_proj =  'lambert',
+ ref_lat   = 39.96,
+ ref_lon   = -73.55,
+ truelat1  = 39.96,
+ truelat2  = 39.96,
+ stand_lon = -73.55,
+ geog_data_path = '/glade/work/wrfhelp/WPS_GEOG/',
+ opt_geogrid_tbl_path = '/glade/work/mhafsah/derecho_pre_compiled_wrf/wpsv4.5/geogrid/',
+ ref_x = 180.5,
+ ref_y = 130.5,
+/
+
+&ungrib
+ out_format = 'WPS',
+ !prefix = 'era5_surf',
+ prefix = 'era5_pres',
+/
+
+&metgrid
+ fg_name = 'era5_pres', 'era5_surf',
+ io_form_metgrid = 2,
+ opt_metgrid_tbl_path = '/glade/work/mhafsah/derecho_pre_compiled_wrf/wpsv4.5/metgrid/'
+/
+
